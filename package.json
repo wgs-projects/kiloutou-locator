@@ -1,0 +1,23 @@
+{
+  "name": "storelocatorwidget",
+  "version": "1.0.0",
+  "description": "Example of Kiloutou Store Locator widget with custom renderers",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "sass": "^1.45.1"
+  },
+
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
+}

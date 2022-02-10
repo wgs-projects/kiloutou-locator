@@ -1,0 +1,259 @@
+body {
+  font-family: Roboto-Bold, Arial, sans-serif;
+}
+
+#store-locator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: Roboto-Bold, Arial, sans-serif;
+}
+
+#myCustomContentID {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 0;
+  padding: 6px;
+}
+
+.summary {
+  &-content {
+    position: relative;
+  }
+
+  &-title {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-text {
+    color: #737373;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &-phone {
+    margin: 10px 0;
+    display: flex;
+    font: inherit;
+    align-items: center;
+
+    & .icon {
+      display: flex;
+    }
+
+    img {
+      letter-spacing: .2rem;
+      border-radius: 100%;
+    }
+
+    a {
+      color: #1755CF;
+      padding-left: 4px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &-distance {
+    opacity: 0.8;
+    font-weight: 400;
+    display: block;
+    position: absolute;
+    top: 33px;
+    right: -40px;
+    font-size: .85em;
+  }
+
+  &-hours {
+    margin-top: 5px;
+    padding: 5px 0;
+  }
+
+  &-types {
+    display: flex;
+    margin-top: 10px;
+
+    & .icon {
+      display: block;
+      border-radius: 100%;
+      //background-color: #F5F5F5;
+
+      img {
+        max-width: 36px;
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+.connector {
+  position: relative;
+  margin-bottom: 2em;
+
+  &-title {
+    line-height: 1.5em;
+    font-size: 1.1em;
+  }
+
+  &-content {
+    min-height: 70px;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &-icon {
+    text-align: center;
+    margin-right: 1em;
+    width: 70px;
+  }
+
+  &-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+}
+
+hr.separator {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.filters {
+  padding-bottom: 10px;
+
+  &-group {
+    padding: 3px 10px 10px 25px;
+    background: url("./images/icons/energie&air.svg") no-repeat;
+    color: #000;
+    font-weight: 600;
+  }
+
+  &-button {
+    position: relative;
+    text-align: left;
+    color: #1d1d1d;
+    margin: 6px;
+    align-items: center;
+    border-radius: 32px;
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #dadce0;
+    font: inherit;
+    list-style: none;
+    outline: 0;
+    overflow: visible;
+    vertical-align: baseline;
+    background: #fff;
+
+    &:hover {
+      background: #f2f2f2;
+    }
+
+    .active & {
+      background: rgba(0, 168, 98, 0.15);
+    }
+
+  }
+}
+
+.plug-status-availability {
+  text-transform: capitalize;
+  padding: 0.3em 0.6em;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+  font-size: small;
+}
+
+.badge {
+  background-color: #DFDFDF;
+  padding: 0.3em 0.6em;
+  margin: 0.3em 0.3em 0.3em 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+  font-size: small;
+  display: inline-block;
+}
+
+.title-filters {
+  font-size: 1.1rem;
+}
+
+.active-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  display: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' style='width: 21px;height: 21px;'%3E%3Cpath d='M4.29 12.104c-.277-.308-.75-.332-1.06-.054-.306.278-.33.752-.053 1.06l4.485 4.963c.29.322.795.33 1.096.017L20.414 6.003c.288-.298.28-.773-.02-1.06-.297-.288-.772-.28-1.06.02L8.237 16.47 4.29 12.105z' fill='%2300a862' %3E%3C/path%3E%3C/svg%3E");
+}
+
+
+.active .active-icon-wrapper {
+  display: block;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.active-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  display: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' style='width: 21px;height: 21px;'%3E%3Cpath d='M4.29 12.104c-.277-.308-.75-.332-1.06-.054-.306.278-.33.752-.053 1.06l4.485 4.963c.29.322.795.33 1.096.017L20.414 6.003c.288-.298.28-.773-.02-1.06-.297-.288-.772-.28-1.06.02L8.237 16.47 4.29 12.105z' fill='%2300a862' %3E%3C/path%3E%3C/svg%3E");
+}
+
+.icon-service {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  vertical-align: middle;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-agence-generaliste,
+.icon-service-commercial-terrassement {
+  background-image: url("./images/icons/nacelle.svg");
+}
+
+.icon-agence-terrassement,
+.icon-quai-elevation-terrassement,
+.icon-generaliste-type-3 {
+  background-image: url("./images/icons/nettoyage-1.svg");
+}
+
+
+.icon-agence-k,
+.icon-service-commercial-elevation {
+  background-image: url("./images/icons/travaillerHauteur.svg");
+}
