@@ -1,12 +1,22 @@
-import {typesMapping} from "./config";
-import store_photo from './images/photos/chapitre-elevation-2.png'
+import {tagsMapping} from "./config";
+
+import store_photo1 from './images/photos/1.jpeg'
+import store_photo2 from './images/photos/2.jpeg'
+import store_photo3 from './images/photos/3.jpeg'
+import store_photo4 from './images/photos/4.jpeg'
+import store_photo5 from './images/photos/5.jpeg'
+import store_photo6 from './images/photos/6.jpeg'
+import store_photo7 from './images/photos/7.jpeg'
+import store_photo8 from './images/photos/8.jpeg'
+
+const store_photos = [store_photo1, store_photo2, store_photo3, store_photo4, store_photo5, store_photo6, store_photo7, store_photo8]
 import phone_icon from "./images/icons/phone.svg";
 import email_icon from "./images/icons/email.svg";
 
 const getTypesIcons = (properties) => {
-    if (properties.types.length > 0) {
-        const types = properties.types.map((type) => {
-            const typeIcon = typesMapping.find(c => c.key === type).icon;
+    if (properties.tags.length > 0) {
+        const types = properties.tags.map((type) => {
+            const typeIcon = tagsMapping.find(c => c.key === type).icon;
             return typeIcon ? `<div class="icon"><img src=${typeIcon}></div>` : ''
         })
         return `<div class="summary-types">${types.join("")}</div>`
@@ -33,7 +43,8 @@ const renderFullViewBody = (properties) => {
 
 
 export const renderPhoto = (properties) => {
-    return `<div class="store-photo"><img src="${store_photo}"></div>`
+    const random = Math.floor(Math.random() * store_photos.length);
+    return `<div class="store-photo"><img src="${store_photos[random]}"></div>`
 }
 
 

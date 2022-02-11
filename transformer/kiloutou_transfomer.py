@@ -1,11 +1,12 @@
 # coding=utf-8
-import unicodecsv as csv
 import json
 import os
+import random
 import time
-import requests
 from datetime import datetime
 
+import requests
+import unicodecsv as csv
 
 YOUR_INPUT_CSV_FILE = 'kiloutou_agency.csv'
 WOOSMAP_PRIVATE_API_KEY = '5086eabb-8b82-467c-844c-f407ab6b3bef'
@@ -73,6 +74,11 @@ def get_types(asset):
         return [formatted_type]
     else:
         raise ValueError('Unable to get the types')
+
+
+def get_tags():
+    random_tags = {"tag_1", "tag_2", "tag_3", "tag_4", "tag_5", "tag_6"}
+    return random.sample(random_tags, 3)
 
 
 def get_contact(asset):
@@ -178,7 +184,7 @@ def convert_to_woosmap(asset):
             'address': get_address(asset),
             'contact': get_contact(asset),
             'location': get_geometry(asset),
-            # 'tags': get_tags(asset),
+            'tags': get_tags(),
             'types': get_types(asset),
             'openingHours': get_hours(asset),
             # 'userProperties': get_userProperties(asset)

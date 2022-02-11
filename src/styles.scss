@@ -9,7 +9,7 @@ body * {
 }
 
 table {
-  border-spacing: 0px;
+  border-spacing: 1px;
 }
 
 h3 {
@@ -105,6 +105,7 @@ h3 {
       img {
         max-width: 36px;
         margin-right: 2px;
+        padding: 4px;
       }
     }
   }
@@ -171,6 +172,14 @@ hr.separator {
 
 .full-content {
   padding: 6px;
+
+  & .icon {
+    padding: 6px;
+    border-radius: 100%;
+    display: flex;
+    background: #F5F5F5;
+    margin-right: 10px;
+  }
 }
 
 .filters {
@@ -181,35 +190,79 @@ hr.separator {
     background: url("./images/icons/energie&air.svg") no-repeat;
     color: #000;
     font-weight: 700;
+    position: relative;
   }
 
   &-button {
     position: relative;
     text-align: left;
     color: #1d1d1d;
-    margin: 6px;
     align-items: center;
-    border-radius: 32px;
     cursor: pointer;
     display: flex;
     height: 32px;
-    padding: 0 12px;
-    border: 1px solid #dadce0;
+    padding: 3px 12px 3px 38px;
     font: inherit;
     list-style: none;
     outline: 0;
     overflow: visible;
     vertical-align: baseline;
     background: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:hover {
-      background: #f2f2f2;
+      background: #F5F5F5;
     }
 
-    .active & {
-      background: rgba(0, 168, 98, 0.15);
+    &:hover input ~ .checkmark {
+      background-color: #ccc;
     }
 
+    .active & input ~ .checkmark {
+      background-color: #FFC800;
+    }
+
+    .active & input ~ .checkmark:after {
+      display: block;
+    }
+
+    .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 8px;
+      border: solid #1D1D1D;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    border-radius: 4px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    background-color: #F5F5F5;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
   }
 }
 
@@ -217,27 +270,8 @@ hr.separator {
   font-size: 1.1rem;
 }
 
-.active-icon-wrapper {
-  width: 21px;
-  height: 21px;
-  display: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' style='width: 21px;height: 21px;'%3E%3Cpath d='M4.29 12.104c-.277-.308-.75-.332-1.06-.054-.306.278-.33.752-.053 1.06l4.485 4.963c.29.322.795.33 1.096.017L20.414 6.003c.288-.298.28-.773-.02-1.06-.297-.288-.772-.28-1.06.02L8.237 16.47 4.29 12.105z' fill='%2300a862' %3E%3C/path%3E%3C/svg%3E");
-}
-
-
-.active .active-icon-wrapper {
-  display: block;
-}
-
 .flex-grow {
   flex-grow: 1;
-}
-
-.active-icon-wrapper {
-  width: 21px;
-  height: 21px;
-  display: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' style='width: 21px;height: 21px;'%3E%3Cpath d='M4.29 12.104c-.277-.308-.75-.332-1.06-.054-.306.278-.33.752-.053 1.06l4.485 4.963c.29.322.795.33 1.096.017L20.414 6.003c.288-.298.28-.773-.02-1.06-.297-.288-.772-.28-1.06.02L8.237 16.47 4.29 12.105z' fill='%2300a862' %3E%3C/path%3E%3C/svg%3E");
 }
 
 .icon-service {

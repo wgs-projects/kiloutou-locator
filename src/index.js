@@ -24,7 +24,7 @@ const loadWebApp = () => {
         let div = document.createElement("div");
         const className = key;
         div.className = selected ? "active" : "";
-        div.innerHTML = `<div class='filters-button'><div class='icon-service icon-${className}'></div><div class='flex-grow'>${label}</div><div class='active-icon-wrapper'></div></div>`;
+        div.innerHTML = `<label class='filters-button'><input type="checkbox"><span class="checkmark"></span><div class='icon-service icon-${className}'></div><div style="height: 12px;">${label}</div></label>`;
         return div;
     });
 

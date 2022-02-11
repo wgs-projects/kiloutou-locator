@@ -1,10 +1,10 @@
-import {typesMapping} from "./config";
+import {tagsMapping} from "./config";
 import phone_icon from './images/icons/phone.svg'
 
 const getTypesIcons = (properties) => {
-    if (properties.types.length > 0) {
-        const types = properties.types.map((type) => {
-            const typeIcon = typesMapping.find(c => c.key === type).icon;
+    if (properties.tags.length > 0) {
+        const types = properties.tags.map((type) => {
+            const typeIcon = tagsMapping.find(c => c.key === type).icon;
             return typeIcon ? `<div class="icon"><img src=${typeIcon}></div>` : ''
         })
         return `<div class="summary-types">${types.join("")}</div>`
