@@ -67,9 +67,6 @@ const availableServices = [
 ];
 
 export const configLocator = {
-    "initialSearch": {
-        "text": "Paris"
-    },
     maps: mapsProviderOptions,
     woosmapview: woosmapViewOptions,
     datasource: {

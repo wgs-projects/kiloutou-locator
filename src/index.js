@@ -1,7 +1,7 @@
 import "./styles.scss";
 import {configLocator, woosmapPublicKey} from "./config.js";
 import {renderSummaryView} from "./summaryView.js";
-/*import {renderFullView} from "./fullView.js";*/
+import {renderFullView} from "./fullView.js";
 
 
 String.prototype.capitalize = function () {
@@ -27,13 +27,13 @@ const loadWebApp = () => {
         div.innerHTML = `<div class='filters-button'><div class='icon-service icon-${className}'></div><div class='flex-grow'>${label}</div><div class='active-icon-wrapper'></div></div>`;
         return div;
     });
-    /*
+
     webapp.setFullStoreRenderer((store) => {
         const myCustomContent = document.createElement("ul");
         myCustomContent.id = "myCustomContentID";
         myCustomContent.innerHTML = renderFullView(store);
         return myCustomContent;
-    });*/
+    });
 
     webapp.setSummaryStoreRenderer((store) => {
         const mySummaryContent = document.createElement("div");
@@ -43,7 +43,6 @@ const loadWebApp = () => {
     });
 
     webapp.setConf(configLocator);
-
     const isMobile = document.querySelector("body").clientWidth < 750;
     webapp.render(isMobile);
 };
