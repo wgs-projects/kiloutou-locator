@@ -70,6 +70,7 @@ const mapsProviderOptions = {
     provider: "woosmap",
     localities: {
         types: [
+            "address",
             "locality",
             "postal_code",
             "metro_station",

@@ -324,7 +324,7 @@ var woosmapViewOptions = {
 var mapsProviderOptions = {
   provider: "woosmap",
   localities: {
-    types: ["locality", "postal_code", "metro_station", "train_station", "shopping"],
+    types: ["address", "locality", "postal_code", "metro_station", "train_station", "shopping"],
     componentRestrictions: {
       country: "fr"
     }
@@ -755,7 +755,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53413" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50119" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
